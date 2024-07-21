@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main class="main__container">
+      <h1 class="sr-only">Basic tip calculator</h1>
+      <img
+        class="main__logo"
+        src="./assets/images/logo.svg"
+        alt="Splitter logo"
+        aria-hidden="true"
+      />
+
+      <section class="calculator__wrapper">
+        <h2 class="sr-only">Calculator</h2>
+
+        <form class="calculator__form">
+          <label class="textbox--label" for="bill-total">
+            <span class="textbox--label-main">Bill</span>
+            <span class="textbox--label-error" id="bill-input-hint" aria-hidden="true"></span>
+          </label>
+          <div class="textbox textbox--bill">
+            <img
+              class="textbox__icon"
+              src="./assets/images/icon-dollar.svg"
+              alt="Dollar icon"
+              aria-hidden="true"
+            />
+            <input
+              class="textbox__input"
+              id="bill-total"
+              type="number"
+              placeholder="0"
+              min="0"
+              step=".01"
+              aria-describedby="bill-input-hint"
+              aria-invalid="false"
+              aria-required="true"
+            />
+            <span class="textbox__border"></span>
+          </div>
+
+          <fieldset class="tip-rate__wrapper">
+            <legend class="tip-rate__label">
+              <span class="tip-rate__label-main">Select Tip %</span>
+              <span class="tip-rate__label-error" id="tip-rate-hint" aria-hidden="true"></span>
+            </legend>
+            <label class="tip-rate__radiobox" for="tip-5-percent">
+              <input
+                class="tip-rate__radiobox__input"
+                id="tip-5-percent"
+                type="radio"
+                name="tip-rate"
+                value="5"
+                aria-describedby="tip-rate-hint"
+              />
+              <span class="tip-rate__radiobox__text">5%</span>
+            </label>
+            <label class="tip-rate__radiobox" for="tip-10-percent">
+              <input
+                class="tip-rate__radiobox__input"
+                id="tip-10-percent"
+                type="radio"
+                name="tip-rate"
+                value="10"
+                aria-describedby="tip-rate-hint"
+              />
+              <span class="tip-rate__radiobox__text">10%</span>
+            </label>
+            <label class="tip-rate__radiobox" for="tip-15-percent">
+              <input
+                class="tip-rate__radiobox__input"
+                id="tip-15-percent"
+                type="radio"
+                name="tip-rate"
+                value="15"
+                aria-describedby="tip-rate-hint"
+              />
+              <span class="tip-rate__radiobox__text">15%</span>
+            </label>
+            <label class="tip-rate__radiobox" for="tip-25-percent">
+              <input
+                class="tip-rate__radiobox__input"
+                id="tip-25-percent"
+                type="radio"
+                name="tip-rate"
+                value="25"
+                aria-describedby="tip-rate-hint"
+              />
+              <span class="tip-rate__radiobox__text">25%</span>
+            </label>
+            <label class="tip-rate__radiobox" for="tip-50-percent">
+              <input
+                class="tip-rate__radiobox__input"
+                id="tip-50-percent"
+                type="radio"
+                name="tip-rate"
+                value="50"
+                aria-describedby="tip-rate-hint"
+              />
+              <span class="tip-rate__radiobox__text">50%</span>
+              <span class="tip-10-percent"></span>
+            </label>
+            <label class="sr-only" for="tip-custom">Tip percentage</label>
+            <div class="textbox">
+              <input
+                class="textbox__input"
+                id="tip-custom"
+                type="number"
+                placeholder="Custom"
+                min="0"
+                max="100"
+                aria-describedby="tip-rate-hint"
+              />
+              <span class="textbox__border"></span>
+            </div>
+          </fieldset>
+
+          <label class="textbox--label" for="person-count"
+            ><span class="textbox--label-main"> Number of People </span>
+            <span
+              class="textbox--label-error"
+              id="person-count-input-hint"
+              aria-hidden="true"
+            ></span>
+          </label>
+          <div class="textbox textbox--people">
+            <img
+              class="textbox__icon"
+              src="./assets/images/icon-person.svg"
+              alt="Person icon"
+              aria-hidden="true"
+            />
+            <input
+              class="textbox__input"
+              id="person-count"
+              type="number"
+              placeholder="0"
+              min="0"
+              aria-describedby="person-count-input-hint"
+              aria-invalid="false"
+              aria-required="true"
+            />
+            <span class="textbox__border"></span>
+          </div>
+          <button class="calculator__form__btn" type="submit">Calculate</button>
+        </form>
+        <section class="calculator__result">
+          <h3 class="sr-only">Calculator result</h3>
+          <p class="sr-only" id="calculator-result-text" aria-live="polite">Empty</p>
+          <ul class="calculator__result__list" aria-hidden="true">
+            <li class="calculator__result__item">
+              <p class="calculator__result__text">
+                <span>Tip Amount</span>
+                <small>/ person</small>
+              </p>
+              <strong class="calculator__result__value" id="tip-per-person">$0.00</strong>
+            </li>
+            <li class="calculator__result__item">
+              <p class="calculator__result__text">
+                <span>Total</span>
+                <small>/ person</small>
+              </p>
+              <strong class="calculator__result__value" id="total-per-person">$0.00 </strong>
+            </li>
+          </ul>
+          <button class="calculator__result__reset-btn" id="calculator-reset-btn" disabled>
+            <span class="calculator__result__reset-btn--inner">Reset</span>
+          </button>
+        </section>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

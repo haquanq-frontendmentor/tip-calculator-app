@@ -1,0 +1,12 @@
+{
+  "name": "fm-tip-calculator-app",
+  "description": "Solution for frontendmentor.io challenge: tip-calculator-app",
+  "devDependencies": {
+    "browser-sync": "^3.0.2"
+  },
+  "scripts": {
+    "dev": "browser-sync start -s app -f app --no-ui"
+  },
+  "author": "haquanq",
+  "license": "MIT"
+}
