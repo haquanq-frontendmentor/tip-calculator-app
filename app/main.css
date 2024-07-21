@@ -135,49 +135,41 @@ input[type="number"] {
 }
 .textbox {
     position: relative;
-    display: flex;
-    align-items: center;
-    background-color: var(--clr-cyan-50);
     border-radius: var(--rounded-xsm);
 }
-.textbox__border {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: 2px solid transparent;
-    border-radius: inherit;
-    pointer-events: none;
-    transition: border-color 150ms ease;
-}
 .textbox__input {
+    background-color: var(--clr-cyan-50);
+    border-radius: inherit;
     border: none;
-    padding: 0.375rem 1.0625rem 0.40625rem 1.125rem;
+    padding: 0.25rem 0.9375rem 0.28125rem 1.125rem;
     width: 100%;
-    background-color: transparent;
     text-align: end;
     font-size: var(--text-lg);
     color: var(--clr-cyan-900);
+    border: 2px solid transparent;
+    transition: border-color 200ms ease;
 }
 .textbox__input:focus + .textbox__border {
     border-color: var(--clr-cyan-500);
 }
-.textbox__input[aria-invalid="true"] + .textbox__border {
+.textbox__input[aria-invalid="true"] {
     border-color: var(--clr-red-500);
 }
 .textbox__input::placeholder {
     color: var(--clr-cyan-100);
 }
 .textbox__icon {
+    pointer-events: none;
     flex-shrink: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .textbox--bill .textbox__icon {
-    margin-left: 1.1875rem;
+    left: 1.1875rem;
 }
 .textbox--people .textbox__icon {
-    margin-left: 1.0625rem;
+    left: 1.0625rem;
 }
 
 .tip-rate__wrapper {
@@ -187,7 +179,9 @@ input[type="number"] {
     grid-template-columns: 1fr 1fr;
     gap: 1rem 1rem;
     padding: 0;
+    width: 100%;
 }
+
 .tip-rate__label {
     width: 100%;
     display: flex;
@@ -314,7 +308,7 @@ input[type="number"] {
         outline: 2px solid var(--clr-cyan-50);
         outline-offset: 4px;
     }
-    .textbox__input:focus-visible + .textbox__border {
+    .textbox__input:focus-visible {
         outline: 2px solid var(--clr-cyan-900);
         outline-offset: 4px;
     }
@@ -333,7 +327,7 @@ input[type="number"] {
     .calculator__result__reset-btn:hover::after {
         opacity: 0.6;
     }
-    .textbox:hover .textbox__border {
+    .textbox__input:hover {
         border-color: var(--clr-cyan-500);
     }
     .tip-rate__radiobox:hover .tip-rate__radiobox__text {
