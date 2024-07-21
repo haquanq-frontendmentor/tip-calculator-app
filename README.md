@@ -18,7 +18,7 @@ Users should be able to:
 - Mobile-first workflow
 - Accessible for screen readers
 
-![](./.docs/design/desktop-design.jpg)
+![](./.docs/design/desktop-design-empty.jpg)
 
 # Working in `fm-tip-calculator-app` repository
 
