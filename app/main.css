@@ -194,6 +194,7 @@ input[type="number"] {
     justify-content: space-between;
     margin-bottom: 1.25rem;
     padding: 0;
+    color: var(--clr-cyan-900);
 }
 .tip-rate__label-error {
     color: var(--clr-red-500);
