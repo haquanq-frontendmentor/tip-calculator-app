@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="sr-only">Basic tip calculator</h1>
+      <img class="main__logo" src="./assets/images/logo.svg" alt="Splitter logo" aria-hidden="true" />
+
+      <section class="calculator">
+        <form class="calculator__form" novalidate>
+          <h2 class="sr-only">Calculator</h2>
+          <div class="text-field" id="bill-total-text-field">
+            <label class="text-field__label" for="bill-total-input">Bill</label>
+            <div class="text-field__input-wrapper">
+              <img class="text-field__icon" src="./assets/images/icon-dollar.svg" alt="" />
+              <input
+                class="text-field__input"
+                id="bill-total-input"
+                type="text"
+                required
+                placeholder="0"
+                aria-describedby="bill-total-input-hint"
+                aria-invalid="false"
+              />
+            </div>
+            <p class="text-field__hint" id="bill-total-input-hint"></p>
+          </div>
+
+          <fieldset class="radio-field" id="tip-rate-radio-field">
+            <legend class="radio-field__label">Select Tip %</legend>
+            <div class="radio-field__option-group">
+              <label class="radio-field__option">
+                <input
+                  class="radio-field__input"
+                  type="radio"
+                  required
+                  name="tip-rate"
+                  value="5"
+                  aria-describedby="radio-field-hint"
+                />
+                <span class="radio-field__option-label">5%</span>
+              </label>
+              <label class="radio-field__option">
+                <input
+                  class="radio-field__input"
+                  type="radio"
+                  name="tip-rate"
+                  value="10"
+                  aria-describedby="radio-field-hint"
+                />
+                <span class="radio-field__option-label">10%</span>
+              </label>
+              <label class="radio-field__option">
+                <input
+                  class="radio-field__input"
+                  type="radio"
+                  name="tip-rate"
+                  value="15"
+                  aria-describedby="radio-field-hint"
+                />
+                <span class="radio-field__option-label">15%</span>
+              </label>
+              <label class="radio-field__option">
+                <input
+                  class="radio-field__input"
+                  type="radio"
+                  name="tip-rate"
+                  value="25"
+                  aria-describedby="radio-field-hint"
+                />
+                <span class="radio-field__option-label">25%</span>
+              </label>
+              <label class="radio-field__option">
+                <input
+                  class="radio-field__input"
+                  type="radio"
+                  name="tip-rate"
+                  value="50"
+                  aria-describedby="radio-field-hint"
+                />
+                <span class="radio-field__option-label">50%</span>
+              </label>
+
+              <div class="radio-field__custom-option">
+                <label class="radio-field__option">
+                  <input class="radio-field__input" type="radio" name="tip-rate" aria-describedby="radio-field-hint" />
+                  <span class="radio-field__option-label">Custom</span>
+                </label>
+                <label>
+                  <span class="sr-only">Custom tip percentage</span>
+                  <input
+                    class="radio-field__custom-input"
+                    type="text"
+                    inputmode="numeric"
+                    name="custom-tip-rate"
+                    placeholder="Custom"
+                    aria-describedby="radio-field-hint"
+                    disabled
+                  />
+                </label>
+              </div>
+            </div>
+            <p class="radio-field__hint" id="radio-field-hint"></p>
+          </fieldset>
+          <div class="text-field" id="number-of-people-text-field">
+            <label class="text-field__label" for="person-count-input"> Number of People </label>
+            <div class="text-field__input-wrapper">
+              <img class="text-field__icon" src="./assets/images/icon-person.svg" alt="" />
+              <input
+                class="text-field__input"
+                id="person-count-input"
+                name="person-count"
+                type="text"
+                placeholder="0"
+                aria-invalid="false"
+                aria-describedby="person-count-input-hint"
+              />
+            </div>
+            <p class="text-field__hint" id="person-count-input-hint"></p>
+          </div>
+        </form>
+        <section class="result">
+          <h2 class="sr-only">Result</h2>
+          <ul class="result__list">
+            <li class="result__item">
+              <p class="result__label" aria-hidden="true">
+                <span>Tip Amount</span>
+                <small>/ person</small>
+              </p>
+              <span class="sr-only">Tip amount per person: </span>
+              <strong class="result__value" id="tip-amount-per-person">$0.00</strong>
+            </li>
+            <li class="result__item">
+              <p class="result__label" aria-hidden="true">
+                <span>Total</span>
+                <small>/ person</small>
+              </p>
+              <span class="sr-only">Pay amount per person after tip: </span>
+              <strong class="result__value" id="pay-amount-per-person">$0.00</strong>
+            </li>
+          </ul>
+          <button class="result__reset-btn" id="calculator-reset-btn" type="reset" disabled>Reset</button>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./app.ts"></script>
+  </body>
+</html>

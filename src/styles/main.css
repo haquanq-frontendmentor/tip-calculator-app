@@ -1,0 +1,28 @@
+@import "./base/fonts.css";
+@import "./base/variables.css";
+@import "./base/reset.css";
+
+@import "./components/radio-field.css";
+@import "./components/text-field.css";
+@import "./components/calculator.css";
+@import "./components/result.css";
+
+@import "./utils/a11y.css";
+
+.main {
+    min-height: 100vh;
+    padding-block-start: clamp(3.125rem, 16vw - 3em, 10.125rem);
+    background-color: var(--color-cyan-75);
+    font-family: var(--font-primary);
+    font-weight: var(--font-bold);
+    font-size: var(--text-md);
+
+    @media (--tablet) {
+        padding-block-end: clamp(6rem, 15vw + 3em, 14.9375rem);
+    }
+
+    &__logo {
+        margin-block-end: clamp(2.5rem, 5vw + 1.25rem, 5.5rem);
+        margin-inline: auto;
+    }
+}
